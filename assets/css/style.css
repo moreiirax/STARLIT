@@ -1,0 +1,835 @@
+/* =========================================
+   STARLIT — iPhone / Apple Style
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #020914;
+    color: #f8f8f8;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   NAVBAR — ESTILO IPHONE / GRANDE
+   ========================================= */
+
+.navbar {
+    position: fixed;
+
+    top: 25px;
+    left: 2%;
+
+    width: 96%;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 42px;
+
+    background: rgba(18, 27, 43, 0.58);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 34px;
+
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+
+    box-shadow:
+        0 15px 55px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #f7e6bf;
+
+    text-decoration: none;
+}
+
+.brand-star {
+    font-size: 28px;
+
+    color: #f6d991;
+
+    transform: rotate(-8deg);
+
+    text-shadow:
+        0 0 18px rgba(246, 217, 145, 0.45);
+}
+
+.brand img {
+    width: 180px;
+    height: auto;
+    display: block;
+}
+
+
+/* LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 10px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.nav-links a {
+    color: #aeb7c5;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    padding: 9px 14px;
+
+    border-radius: 12px;
+
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* AÇÕES */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-actions button {
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    padding: 10px 17px;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.entrar {
+    color: #e9d7ae;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.entrar:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.criar-conta {
+    color: #101827;
+
+    background: #f6dfb2;
+
+    border: 1px solid #f6dfb2;
+
+    box-shadow:
+        0 5px 20px rgba(246, 223, 178, 0.12);
+}
+
+.criar-conta:hover {
+    transform: translateY(-2px);
+
+    background: #fff1d0;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 75% 45%,
+            rgba(55, 91, 137, 0.32),
+            transparent 27%),
+        radial-gradient(circle at 20% 80%,
+            rgba(37, 65, 104, 0.22),
+            transparent 32%),
+        #020914;
+}
+
+
+/* =========================================
+   ESTRELAS
+   ========================================= */
+
+.stars,
+.stars::before,
+.stars::after {
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        5vw 12vh #fff,
+        10vw 31vh #dceaff,
+        15vw 65vh #fff,
+        21vw 18vh #dceaff,
+        26vw 48vh #fff,
+        31vw 76vh #dceaff,
+        36vw 25vh #fff,
+        41vw 57vh #fff,
+        47vw 14vh #dceaff,
+        52vw 42vh #fff,
+        57vw 70vh #dceaff,
+        62vw 22vh #fff,
+        68vw 58vh #fff,
+        73vw 9vh #dceaff,
+        78vw 38vh #fff,
+        83vw 73vh #fff,
+        88vw 19vh #dceaff,
+        94vw 48vh #fff,
+        97vw 82vh #dceaff;
+
+    animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+.stars {
+    top: 0;
+    left: 0;
+}
+
+.stars::before {
+    content: "";
+
+    top: 0;
+    left: 0;
+
+    opacity: 0.4;
+
+    transform: scale(0.7);
+
+    animation-delay: -2s;
+}
+
+.stars::after {
+    content: "";
+
+    top: 0;
+    left: 0;
+
+    opacity: 0.2;
+
+    transform: scale(0.5);
+
+    animation-delay: -4s;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+
+/* =========================================
+   ESTRELAS CADENTES
+   ========================================= */
+
+.shooting-star {
+    position: absolute;
+
+    width: 100px;
+    height: 1px;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.9),
+            transparent);
+
+    transform: rotate(-45deg);
+
+    opacity: 0;
+
+    animation: shooting 8s linear infinite;
+}
+
+.shooting-one {
+    top: 25%;
+    left: 17%;
+}
+
+.shooting-two {
+    top: 20%;
+    left: 72%;
+
+    animation-delay: 3s;
+}
+
+.shooting-three {
+    top: 60%;
+    left: 60%;
+
+    animation-delay: 6s;
+}
+
+@keyframes shooting {
+    0% {
+        transform: translate(0, 0) rotate(-45deg);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    15% {
+        transform: translate(180px, 180px) rotate(-45deg);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   LUA — REMOVIDA
+   ========================================= */
+
+.moon,
+.moon-glow {
+    display: none !important;
+}
+
+
+/* =========================================
+   HERO CONTENT
+   ========================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 20;
+
+    width: 85%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+    padding-top: 80px;
+
+    text-align: center;
+}
+
+.hero .eyebrow {
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(70px, 8vw, 120px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -5px;
+}
+
+.hero-description {
+    max-width: 700px;
+    margin: 35px auto 0;
+
+    color: #aeb9c9;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 38px;
+}
+
+.eyebrow {
+    color: #e8ca91;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(95px, 10.5vw, 160px);
+
+    font-weight: 400;
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    color: #e9c985;
+
+    text-shadow:
+        0 0 35px rgba(233, 201, 133, 0.08);
+}
+
+.hero-description {
+    margin-top: 28px;
+
+    max-width: 500px;
+
+    color: #aeb9c9;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   BOTÕES
+   ========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 32px;
+}
+
+.hero-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 13px 21px;
+
+    border-radius: 22px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.button-primary {
+    background: #f6dfb2;
+
+    color: #101827;
+
+    box-shadow:
+        0 8px 25px rgba(246, 223, 178, 0.1);
+}
+
+.button-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(246, 223, 178, 0.18);
+}
+
+.button-secondary {
+    color: #edf0f4;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    backdrop-filter: blur(15px);
+}
+
+.button-secondary:hover {
+    background: rgba(255, 255, 255, 0.09);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   NUVENS
+   ========================================= */
+
+.clouds {
+    position: absolute;
+
+    bottom: -90px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 220px;
+
+    pointer-events: none;
+}
+
+.cloud {
+    position: absolute;
+
+    width: 350px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(75, 96, 127, 0.24);
+
+    filter: blur(25px);
+}
+
+.cloud-one {
+    left: -60px;
+    bottom: 10px;
+}
+
+.cloud-two {
+    right: -50px;
+    bottom: 30px;
+
+    width: 450px;
+}
+
+.cloud-three {
+    left: 38%;
+    bottom: -30px;
+
+    width: 500px;
+}
+
+
+/* =========================================
+   SCROLL
+   ========================================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 30;
+
+    text-align: center;
+}
+
+.mouse {
+    width: 28px;
+    height: 43px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding-bottom: 6px;
+
+    margin: auto;
+}
+
+.mouse span {
+    font-size: 8px;
+
+    color: #e7c98f;
+}
+
+.scroll-indicator p {
+    margin-top: 9px;
+
+    color: #718095;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   EXPLORAR
+   ========================================= */
+
+.explore {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 120px 9%;
+
+    background:
+        radial-gradient(circle at 80% 35%,
+            rgba(33, 64, 101, 0.2),
+            transparent 30%),
+        #020914;
+}
+
+.explore-text {
+    max-width: 620px;
+}
+
+.explore-text h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+}
+
+.explore-text>p:last-child {
+    color: #9eabba;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    max-width: 560px;
+}
+
+
+/* =========================================
+   MASCOTE FIXO
+   ========================================= */
+
+.mascot {
+    position: fixed;
+
+    right: 35px;
+    bottom: 30px;
+
+    width: 150px;
+
+    z-index: 2000;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    pointer-events: none;
+}
+
+.mascot img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================================
+   CATEGORIAS — CARDS IPHONE
+   ========================================= */
+
+.categories {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 75px;
+}
+
+.category {
+    position: relative;
+
+    min-height: 300px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.018));
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    text-decoration: none;
+
+    color: white;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.category::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -70px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(235, 205, 140, 0.07);
+
+    filter: blur(20px);
+}
+
+.category:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(234, 210, 165, 0.3);
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.085),
+            rgba(255, 255, 255, 0.025));
+}
+
+.category-icon {
+    height: 115px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 62px;
+
+    color: #e6c887;
+
+    text-shadow:
+        0 0 25px rgba(230, 200, 135, 0.2);
+}
+
+.category h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    margin-bottom: 9px;
+}
+
+.category p {
+    color: #929fb0;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+.arrow {
+    position: absolute;
+
+    left: 22px;
+    bottom: 18px;
+
+    width: calc(100% - 44px);
+
+    height: 39px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    font-size: 18px;
+
+    color: #ddd6c7;
+
+    transition: 0.25s;
+}
+
+.category:hover .arrow {
+    background: rgba(255, 255, 255, 0.08);
+}
