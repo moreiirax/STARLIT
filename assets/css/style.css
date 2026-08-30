@@ -833,3 +833,357 @@ body {
 .category:hover .arrow {
     background: rgba(255, 255, 255, 0.08);
 }
+
+/* =========================================
+   SOBRE NÓS
+   ========================================= */
+
+.about {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 140px 9% 120px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(56, 83, 120, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(220, 188, 113, 0.07),
+            transparent 28%
+        ),
+        #020914;
+}
+
+
+/* CABEÇALHO */
+
+.about-header {
+    max-width: 760px;
+
+    margin-bottom: 70px;
+}
+
+.about-header h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(50px, 6vw, 76px);
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 20px;
+}
+
+.about-header h2 span {
+    color: #e9c985;
+}
+
+.about-intro {
+    color: #9eabba;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    max-width: 560px;
+}
+
+
+/* =========================================
+   HISTÓRIA / PROPÓSITO
+   ========================================= */
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.about-card {
+    position: relative;
+
+    padding: 38px;
+
+    min-height: 330px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    overflow: hidden;
+}
+
+.about-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(232, 201, 133, 0.06);
+
+    filter: blur(25px);
+}
+
+.about-card-number {
+    color: #e5c681;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 45px;
+
+    opacity: 0.8;
+}
+
+.about-card h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 31px;
+
+    font-weight: 500;
+
+    margin-bottom: 18px;
+}
+
+.about-card p {
+    color: #9da9b9;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    max-width: 650px;
+}
+
+
+/* =========================================
+   CRIADORES
+   ========================================= */
+
+.creators {
+    margin-top: 110px;
+}
+
+.creators-title {
+    margin-bottom: 35px;
+}
+
+.creators-title h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    letter-spacing: -1px;
+}
+
+.creator-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.creator-card {
+    padding: 32px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.12);
+}
+
+.creator-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    margin-bottom: 25px;
+}
+
+.creator-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    color: #e9c985;
+
+    background: rgba(233, 201, 133, 0.07);
+
+    border: 1px solid rgba(233, 201, 133, 0.12);
+
+    font-size: 20px;
+}
+
+.creator-card h4 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    margin-bottom: 4px;
+}
+
+.creator-card span {
+    color: #d2b777;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+}
+
+.creator-card > p {
+    color: #9da9b9;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================
+   FINAL — FRASE + CADASTRO
+   ========================================= */
+
+.about-final {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-top: 120px;
+
+    padding-top: 80px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-final > p {
+    max-width: 750px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(27px, 3vw, 40px);
+
+    line-height: 1.35;
+
+    color: #f1eadc;
+}
+
+.about-final > span {
+    margin-top: 18px;
+
+    color: #d0b979;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+/* BOTÃO */
+
+.about-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 42px;
+
+    padding: 17px 25px;
+
+    border-radius: 25px;
+
+    color: #101827;
+
+    background: #f6dfb2;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 35px rgba(246, 223, 178, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.about-button span {
+    font-weight: 400;
+}
+
+.about-button b {
+    margin-left: 8px;
+
+    font-size: 19px;
+
+    font-weight: 400;
+}
+
+.about-button:hover {
+    transform: translateY(-4px);
+
+    background: #fff1d0;
+
+    box-shadow:
+        0 15px 40px rgba(246, 223, 178, 0.18);
+}
