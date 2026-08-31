@@ -1187,3 +1187,150 @@ body {
     box-shadow:
         0 15px 40px rgba(246, 223, 178, 0.18);
 }
+
+/* =========================================
+   FOOTER — STARLIT
+   ========================================= */
+
+.footer {
+    position: relative;
+
+    padding: 80px 9% 30px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(62, 88, 125, 0.12),
+            transparent 35%
+        ),
+        #010711;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   CONTEÚDO
+   ========================================= */
+
+.footer-content {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 60px;
+
+    padding-bottom: 65px;
+}
+
+
+/* =========================================
+   MARCA
+   ========================================= */
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    display: inline-block;
+
+    text-decoration: none;
+}
+
+.footer-logo img {
+    width: 150px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+.footer-brand p {
+    margin-top: 20px;
+
+    color: #7f8b9d;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    max-width: 260px;
+}
+
+
+/* =========================================
+   COLUNAS
+   ========================================= */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.footer-column h4 {
+    margin-bottom: 8px;
+
+    color: #eee3ca;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.footer-column a {
+    width: fit-content;
+
+    color: #7f8b9d;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+}
+
+.footer-column a:hover {
+    color: #f1d89e;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   PARTE INFERIOR
+   ========================================= */
+
+.footer-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-bottom p {
+    color: #596577;
+
+    font-size: 12px;
+}
+
+.footer-made span {
+    color: #e6c887;
+
+    margin: 0 4px;
+
+    text-shadow:
+        0 0 12px rgba(230, 200, 135, 0.4);
+}
