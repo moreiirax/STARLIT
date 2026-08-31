@@ -1,0 +1,520 @@
+/* =========================================
+   STARLIT — PÁGINA ENTRAR
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(49, 76, 113, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(35, 59, 94, 0.18),
+            transparent 30%
+        ),
+        #020914;
+
+    color: #f8f8f8;
+
+    font-family: 'DM Sans', sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   ESTRELAS
+   ========================================= */
+
+.stars,
+.stars::before,
+.stars::after {
+    position: fixed;
+
+    width: 2px;
+    height: 2px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        5vw 12vh #fff,
+        11vw 28vh #dceaff,
+        17vw 72vh #fff,
+        23vw 15vh #dceaff,
+        29vw 52vh #fff,
+        36vw 82vh #dceaff,
+        42vw 25vh #fff,
+        48vw 67vh #fff,
+        55vw 12vh #dceaff,
+        61vw 43vh #fff,
+        68vw 78vh #dceaff,
+        74vw 22vh #fff,
+        81vw 58vh #fff,
+        87vw 10vh #dceaff,
+        93vw 45vh #fff,
+        97vw 82vh #dceaff;
+
+    animation: twinkle 5s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.stars {
+    top: 0;
+    left: 0;
+}
+
+
+.stars::before {
+    content: "";
+
+    top: 0;
+    left: 0;
+
+    opacity: 0.4;
+
+    transform: scale(0.7);
+
+    animation-delay: -2s;
+}
+
+
+.stars::after {
+    content: "";
+
+    top: 0;
+    left: 0;
+
+    opacity: 0.2;
+
+    transform: scale(0.5);
+
+    animation-delay: -4s;
+}
+
+
+@keyframes twinkle {
+
+    0% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+
+}
+
+
+/* =========================================
+   PÁGINA
+   ========================================= */
+
+.login-page {
+    position: relative;
+
+    z-index: 10;
+
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 60px 20px 40px;
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.logo {
+    display: block;
+
+    margin-bottom: 28px;
+
+    text-decoration: none;
+}
+
+
+.logo img {
+    width: 145px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.login-card {
+    width: 100%;
+
+    max-width: 470px;
+
+    padding: 42px;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.075),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+
+.login-header {
+    text-align: center;
+
+    margin-bottom: 34px;
+}
+
+
+.eyebrow {
+    color: #e8ca91;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+
+.login-header h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+}
+
+
+.login-header h1 span {
+    color: #e9c985;
+}
+
+
+.description {
+    margin: 18px auto 0;
+
+    max-width: 340px;
+
+    color: #929fb0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+   ========================================= */
+
+.login-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.input-group label {
+    color: #d7dce4;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+.password-label {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.password-label a {
+    color: #cdb574;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition: 0.2s ease;
+}
+
+
+.password-label a:hover {
+    color: #f1d99e;
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+.input-group input {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 17px;
+
+    border-radius: 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+}
+
+
+.input-group input::placeholder {
+    color: #596678;
+}
+
+
+.input-group input:focus {
+    border-color: rgba(233, 201, 133, 0.5);
+
+    background: rgba(0, 0, 0, 0.25);
+
+    box-shadow:
+        0 0 0 3px rgba(233, 201, 133, 0.06);
+}
+
+
+/* =========================================
+   BOTÃO ENTRAR
+   ========================================= */
+
+.login-button {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: #f6dfb2;
+
+    color: #101827;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 8px 30px rgba(246, 223, 178, 0.10);
+}
+
+
+.login-button span {
+    font-size: 18px;
+
+    font-weight: 400;
+}
+
+
+.login-button:hover {
+    transform: translateY(-3px);
+
+    background: #fff1d0;
+
+    box-shadow:
+        0 14px 40px rgba(246, 223, 178, 0.18);
+}
+
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   CADASTRO
+   ========================================= */
+
+.register {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin-top: 27px;
+
+    color: #687587;
+
+    font-size: 12px;
+}
+
+
+.register a {
+    color: #ddc487;
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+
+.register a:hover {
+    color: #f3daa0;
+}
+
+
+/* =========================================
+   VOLTAR
+   ========================================= */
+
+.back {
+    margin-top: 25px;
+
+    color: #697587;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: 0.25s ease;
+}
+
+
+.back:hover {
+    color: #d9c58f;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    padding: 0 20px 25px;
+
+    text-align: center;
+}
+
+
+footer p {
+    color: #4f5b6c;
+
+    font-size: 11px;
+}
