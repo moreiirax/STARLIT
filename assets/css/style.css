@@ -1216,13 +1216,12 @@ body {
 .footer-content {
     display: grid;
 
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1.3fr 1fr;
 
-    gap: 60px;
+    gap: 45px;
 
     padding-bottom: 65px;
 }
-
 
 /* =========================================
    MARCA
