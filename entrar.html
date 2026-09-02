@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./entrar.css">
+    <link rel="icon" type="image/png" href="./assets/img/MASCOTE DAY DREAM.png">
 
     <title>Entrar — STARLIT</title>
 </head>
@@ -77,7 +79,10 @@
 
                     </div>
 
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    <div class="password-input">
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                        <button type="button" class="toggle-password" aria-label="Mostrar senha">&#128065;</button>
+                    </div>
 
                 </div>
 
@@ -98,7 +103,7 @@
                     Ainda não faz parte do STARLIT?
                 </span>
 
-                <a href="#cadastro">
+                <a href="cadastrar.html">
                     Criar minha conta
                 </a>
 
@@ -124,7 +129,7 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./assets/js/auth.js"></script>
 
 </body>
 

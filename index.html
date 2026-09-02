@@ -6,12 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="image/png" href="./assets/img/MASCOTE DAY DREAM.png">
 
     <title>STARLIT</title>
 </head>
 
 <body>
+
+    <!-- PRELOADER -->
+    <div class="site-loader" aria-label="Carregando" role="status">
+        <div class="loader-stars" aria-hidden="true">
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+        </div>
+        <p>carregando</p>
+    </div>
 
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -27,8 +44,8 @@
         </div>
 
         <div class="nav-actions">
-            <button class="entrar">Entrar</button>
-            <button class="criar-conta">Criar conta</button>
+            <a href="entrar.html" class="entrar">Entrar</a>
+            <a href="cadastrar.html" class="criar-conta">Criar conta</a>
         </div>
 
     </nav>
@@ -126,7 +143,7 @@
             <div class="mascot">
 
                 <!-- Troque pelo link da sua imagem depois -->
-                <img src="/assets/img/MASCOTE DAY DREAM.png" alt="Mascote do STARLIT">
+                <img src="./assets/img/MASCOTE DAY DREAM.png" alt="Mascote do STARLIT">
 
             </div>
 
@@ -334,7 +351,7 @@
                 <span>— Jade & Miguel</span>
 
 
-                <a href="#cadastro" class="about-button">
+                <a href="cadastrar.html" class="about-button">
                     Faça parte da comunidade.
                     <span>Venha ser uma Star</span>
                     <b>→</b>
@@ -376,7 +393,7 @@
 
                 <a href="#inicio">Início</a>
                 <a href="#explorar">Explorar</a>
-                <a href="#biblioteca">Biblioteca</a>
+                    <a href="#explorar">Biblioteca</a>
                 <a href="#sobre">Sobre nós</a>
 
             </div>
@@ -400,8 +417,8 @@
 
                 <h4>Comunidade</h4>
 
-                <a href="#cadastro">Criar conta</a>
-                <a href="#">Entrar</a>
+                <a href="cadastrar.html">Criar conta</a>
+                <a href="entrar.html">Entrar</a>
                 <a href="#">Planos</a>
 
             </div>
@@ -436,7 +453,7 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./assets/js/preloader.js"></script>
 
 </body>
 

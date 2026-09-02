@@ -2,9 +2,6 @@
    STARLIT — PÁGINA ENTRAR
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
-
-
 /* =========================================
    RESET
    ========================================= */
@@ -370,6 +367,37 @@ body {
         0 0 0 3px rgba(233, 201, 133, 0.06);
 }
 
+.password-input {
+    position: relative;
+}
+
+.password-input input {
+    padding-right: 48px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #aeb7c5;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.toggle-password:hover,
+.toggle-password:focus-visible {
+    color: #f1d99e;
+}
+
 
 /* =========================================
    BOTÃO ENTRAR
@@ -432,6 +460,21 @@ body {
 
 .login-button:active {
     transform: translateY(0);
+}
+
+.form-message {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.form-message.error {
+    color: #ffaaa8;
+}
+
+.form-message.success {
+    color: #b9e6c3;
 }
 
 

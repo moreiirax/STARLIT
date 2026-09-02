@@ -2,8 +2,6 @@
    STARLIT — iPhone / Apple Style
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +10,119 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+.site-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #020914;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.site-loader.is-finished {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.site-loader p {
+    position: relative;
+    z-index: 2;
+    margin-top: 78px;
+    color: #e9d7ae;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.loader-stars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 92px;
+    height: 92px;
+    transform: translate(-50%, -50%);
+    animation: stars-loading-spin 2.4s linear infinite;
+}
+
+.loader-stars span {
+    position: absolute;
+    color: #f6d991;
+    font-size: 22px;
+    opacity: 0.25;
+    animation: star-loading 1.2s ease-in-out infinite;
+}
+
+.loader-stars span:nth-child(1) {
+    top: 0;
+    left: 35px;
+}
+
+.loader-stars span:nth-child(2) {
+    top: 8px;
+    right: 8px;
+    animation-delay: 0.24s;
+}
+
+.loader-stars span:nth-child(3) {
+    top: 35px;
+    right: 0;
+    animation-delay: 0.48s;
+}
+
+.loader-stars span:nth-child(4) {
+    right: 8px;
+    bottom: 8px;
+    animation-delay: 0.72s;
+}
+
+.loader-stars span:nth-child(5) {
+    bottom: 0;
+    left: 35px;
+    animation-delay: 0.96s;
+}
+
+.loader-stars span:nth-child(6) {
+    bottom: 8px;
+    left: 8px;
+    animation-delay: 1.2s;
+}
+
+.loader-stars span:nth-child(7) {
+    top: 35px;
+    left: 0;
+    animation-delay: 1.44s;
+}
+
+.loader-stars span:nth-child(8) {
+    top: 8px;
+    left: 8px;
+    animation-delay: 1.68s;
+}
+
+@keyframes star-loading {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+        text-shadow: 0 0 14px rgba(246, 217, 145, 0.85);
+    }
+}
+
+@keyframes stars-loading-spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 body {
@@ -131,7 +242,8 @@ body {
     gap: 8px;
 }
 
-.nav-actions button {
+.nav-actions button,
+.nav-actions a {
     font-family: inherit;
 
     font-size: 13px;
@@ -140,6 +252,8 @@ body {
     padding: 10px 17px;
 
     border-radius: 18px;
+
+    text-decoration: none;
 
     cursor: pointer;
 
@@ -690,6 +804,21 @@ body {
     height: auto;
 
     display: block;
+}
+
+@media (max-width: 600px) {
+    .mascot {
+        right: 12px;
+        bottom: 16px;
+        width: 105px;
+        display: block;
+    }
+
+    .mascot img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 }
 
 
