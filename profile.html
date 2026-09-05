@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="icon" type="image/png" href="./assets/img/MASCOTE DAY DREAM.png">
+    <title>Meu espaço — STARLIT</title>
+</head>
+
+<body class="perfil-page">
+    <header class="perfil-topbar">
+        <a href="feed.html" class="perfil-brand" aria-label="Voltar ao feed"><img src="./assets/img/MASCOTE DAY DREAM.png" alt="Mascote STARLIT"></a>
+        <a href="feed.html" class="perfil-back">← Voltar ao feed</a>
+    </header>
+
+    <main class="perfil-main">
+        <section class="perfil-header" aria-labelledby="profileName">
+            <div class="perfil-avatar-wrap"><img class="perfil-avatar" id="profileAvatar" src="./assets/img/MASCOTE DAY DREAM.png" alt="Foto de perfil" title="Clique em Editar perfil para trocar sua foto"><span class="perfil-avatar-star" aria-hidden="true">✦</span></div>
+            <div class="perfil-info"><p class="perfil-eyebrow">MEU UNIVERSO</p><h1 id="profileName">Miguel</h1><p class="perfil-handle" id="profileHandle">@miguel</p><p class="perfil-bio" id="profileBio">Colecionando histórias, sons e pequenos mundos.</p><button class="perfil-edit" id="editProfile" type="button" aria-pressed="false">Editar perfil <span>✎</span></button></div>
+        </section>
+
+        <section class="perfil-editor" id="profileEditor" hidden aria-label="Editar informações do perfil">
+            <form id="profileForm"><label>Nome<input id="nameInput" name="name" maxlength="60" required></label><label>Bio<textarea id="bioInput" name="bio" maxlength="160" placeholder="Conte um pouco sobre o que orbita você..."></textarea></label><div class="perfil-editor-actions"><span id="saveStatus"></span><button type="submit">Salvar alterações <span>↗</span></button></div></form>
+        </section>
+
+        <section class="perfil-space-shell" aria-labelledby="spaceTitle">
+            <div class="perfil-space-heading"><div><p class="perfil-eyebrow">UM LUGAR SÓ SEU</p><h2 id="spaceTitle">Meu espaço</h2><p>Monte do seu jeito. Nada precisa caber em uma categoria.</p></div><button class="perfil-space-edit" id="spaceEdit" type="button">Editar espaço <span>✦</span></button></div>
+            <div class="perfil-edit-toolbar" id="spaceToolbar" hidden>
+                <button class="perfil-add-main" id="addBlock" type="button">＋ Adicionar</button><button class="perfil-add-group" id="createGroup" type="button">＋ Criar grupo</button><span class="perfil-toolbar-separator"></span><button id="rotateLeft" type="button" disabled>↺</button><button id="rotateRight" type="button" disabled>↻</button><button id="bringFront" type="button" disabled>Trazer para frente</button><button id="sendBack" type="button" disabled>Enviar para trás</button><button id="duplicateBlock" type="button" disabled>Duplicar</button><button id="deleteBlock" type="button" disabled>Excluir</button><button class="perfil-finish-edit" id="finishSpaceEdit" type="button">Concluir</button>
+            </div>
+            <div class="perfil-element-controls" id="elementControls" hidden><span id="selectedType">Elemento</span><label>Tamanho <input id="textSizeControl" type="range" min="12" max="72" value="22"></label><select id="textAlignControl" aria-label="Alinhamento do texto"><option value="left">Esquerda</option><option value="center">Centro</option><option value="right">Direita</option></select></div>
+            <div class="profile-canvas" id="profileCanvas" tabindex="0" aria-label="Canvas pessoal"></div>
+            <p class="perfil-space-hint" id="spaceHint">Um espaço feito de coisas que só fazem sentido juntas para você.</p>
+        </section>
+    </main>
+
+    <input id="imageUpload" type="file" accept="image/*" hidden><input id="profileAvatarUpload" type="file" accept="image/*" hidden>
+    <div class="perfil-modal-backdrop" id="addModal" hidden><section class="perfil-add-modal" role="dialog" aria-modal="true" aria-labelledby="addModalTitle"><button class="perfil-modal-close" id="closeModal" type="button" aria-label="Fechar">×</button><p class="perfil-eyebrow">SEU ESPAÇO</p><h2 id="addModalTitle">Adicionar</h2><p>Coloque qualquer coisa onde quiser.</p><div class="perfil-add-options"><button type="button" data-block="image"><span>🖼</span> Imagem</button><button type="button" data-block="image"><span>📷</span> Foto</button><button type="button" data-block="movie"><span>🎬</span> Filme</button><button type="button" data-block="book"><span>📖</span> Livro</button><button type="button" data-block="music"><span>🎵</span> Música</button><button type="button" data-block="text"><span>✍</span> Texto</button><button type="button" data-block="sticker"><span>✦</span> Sticker</button><button type="button" data-block="spacer"><span>▫</span> Espaço vazio</button></div></section></div>
+    <p class="perfil-toast" id="profileToast" role="status" aria-live="polite"></p>
+    <script src="./assets/js/profile.js"></script>
+</body>
+</html>
