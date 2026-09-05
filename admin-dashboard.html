@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./admin.css">
+    <title>Painel Admin — STARLIT</title>
+</head>
+
+<body>
+    <header class="admin-topbar">
+        <a href="admin-dashboard.html" class="brand"><img src="./assets/img/LOGO STARLIT.jpg" alt="STARLIT"></a>
+        <div><span class="eyebrow">ÁREA RESTRITA</span><strong>Painel administrativo</strong></div>
+        <button id="adminLogout" type="button">Sair <span>↪</span></button>
+    </header>
+    <main class="admin-main">
+        <section class="admin-intro">
+            <div><p class="eyebrow">ACESSO AUTORIZADO</p><h1>Olá, <span id="adminName">administrador</span>.</h1><p>Monitore o que acontece no universo STARLIT.</p></div>
+            <a href="feed.html">Voltar ao feed ↗</a>
+        </section>
+        <section class="stats" aria-label="Resumo do site">
+            <article><span>USUÁRIOS</span><strong id="userCount">—</strong></article>
+            <article><span>PUBLICAÇÕES</span><strong id="postCount">—</strong></article>
+            <article><span>CURTIDAS</span><strong id="likeCount">—</strong></article>
+        </section>
+        <div class="admin-grid">
+            <section class="admin-panel"><div class="panel-heading"><h2>Usuários</h2><span id="userStatus"></span></div><div class="table-wrap"><table><thead><tr><th>Nome</th><th>E-mail</th><th>Perfil</th><th>Cadastro</th></tr></thead><tbody id="usersTable"></tbody></table></div></section>
+            <section class="admin-panel"><div class="panel-heading"><h2>Publicações</h2><span id="postStatus"></span></div><div class="table-wrap"><table><thead><tr><th>Autor</th><th>Conteúdo</th><th>Curtidas</th><th></th></tr></thead><tbody id="postsTable"></tbody></table></div></section>
+        </div>
+    </main>
+    <script src="./assets/js/admin-dashboard.js"></script>
+</body>
+</html>

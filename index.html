@@ -37,13 +37,19 @@
             <img src="./assets/img/LOGO STARLIT.jpg" alt="logo starlit">
         </a>
 
-        <div class="nav-links">
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links" id="mainNavigation">
             <a href="#inicio">Início</a>
             <a href="#explorar">Explorar</a>
             <a href="#sobre">Sobre</a>
         </div>
 
-        <div class="nav-actions">
+        <div class="nav-actions" id="navActions">
             <a href="entrar.html" class="entrar">Entrar</a>
             <a href="cadastrar.html" class="criar-conta">Criar conta</a>
         </div>
@@ -90,7 +96,7 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#explorar" class="button-primary">
+                    <a href="#explorar" class="button-primary" id="heroPrimaryAction">
                         Explorar agora
                         <span>＋</span>
                     </a>
@@ -351,7 +357,7 @@
                 <span>— Jade & Miguel</span>
 
 
-                <a href="cadastrar.html" class="about-button">
+                    <a href="cadastrar.html" class="about-button" id="aboutAction">
                     Faça parte da comunidade.
                     <span>Venha ser uma Star</span>
                     <b>→</b>
@@ -454,6 +460,7 @@
     </footer>
 
     <script src="./assets/js/preloader.js"></script>
+    <script src="./assets/js/home.js"></script>
 
 </body>
 

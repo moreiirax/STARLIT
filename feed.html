@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./feed.css">
+    <link rel="icon" type="image/png" href="./assets/img/MASCOTE DAY DREAM.png">
+    <title>Feed — STARLIT</title>
+</head>
+
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <a href="feed.html" class="brand" aria-label="STARLIT, início do feed">
+            <img src="./assets/img/MASCOTE DAY DREAM.png" alt="Mascote STARLIT">
+        </a>
+        <label class="search" aria-label="Pesquisar no STARLIT">
+            <span aria-hidden="true">⌕</span>
+            <input type="search" placeholder="Pesquisar no universo">
+        </label>
+        <button class="profile-button" id="profileButton" type="button" aria-label="Abrir menu da conta" aria-expanded="false">
+            <span class="avatar" id="topAvatar">S</span>
+            <span class="profile-name" id="topName">Minha conta</span>
+            <span aria-hidden="true">⌄</span>
+        </button>
+        <div class="profile-menu" id="profileMenu" hidden>
+            <a href="profile.html">Meu perfil</a>
+            <a href="#configuracoes">Configurações</a>
+            <button type="button" id="menuLogout">Sair da conta</button>
+        </div>
+    </header>
+
+    <div class="app-shell">
+        <aside class="sidebar">
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a class="nav-item active" href="feed.html"><span>✦</span> Feed</a>
+                <a class="nav-item" href="#explorar"><span>⌕</span> Explorar</a>
+                <a class="nav-item" id="savedLink" href="#salvos"><span>☆</span> Salvos</a>
+            </nav>
+            <div class="sidebar-note">
+                <span class="note-star">✦</span>
+                <p>Seu universo fica mais bonito quando compartilhado.</p>
+            </div>
+            <button class="logout-button" id="logoutButton" type="button"><span>↪</span> Sair da conta</button>
+        </aside>
+
+        <main class="feed-content">
+            <section class="welcome-block">
+                <p class="eyebrow">SEU UNIVERSO, SUAS DESCOBERTAS</p>
+                <h1>Olá, <span id="welcomeName">viajante</span>.</h1>
+                <p>O que está orbitando seus pensamentos hoje?</p>
+            </section>
+
+            <section class="composer" aria-labelledby="composerTitle">
+                <div class="composer-avatar avatar" id="composerAvatar">S</div>
+                <div class="composer-main">
+                    <h2 id="composerTitle">Compartilhe uma descoberta</h2>
+                    <form id="postForm">
+                        <textarea id="postText" maxlength="280" placeholder="Escreva algo que merece encontrar outras pessoas..." required></textarea>
+                        <div class="composer-footer">
+                            <span id="characterCount">0 / 280</span>
+                            <button class="publish-button" type="submit">Publicar <span>↗</span></button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <div class="feed-heading">
+                <h2 id="feedTitle">Para você</h2>
+                <label class="filter-control">
+                    <span class="sr-only">Ordenar publicações</span>
+                    <select id="feedSort">
+                        <option value="recent">Mais recentes</option>
+                        <option value="popular">Mais populares</option>
+                    </select>
+                </label>
+            </div>
+            <section class="posts" id="posts" aria-live="polite"></section>
+        </main>
+
+        <aside class="right-rail">
+            <section class="rail-section">
+                <div class="rail-heading"><h2>Em destaque</h2><a href="#explorar">Ver tudo</a></div>
+                <article class="highlight-card">
+                    <span class="highlight-label">LEITURA DA SEMANA</span>
+                    <h3>Livros para noites estreladas</h3>
+                    <p>Uma seleção para quem gosta de se perder em boas histórias.</p>
+                    <a href="#explorar" class="text-link">Explorar seleção <span>→</span></a>
+                </article>
+            </section>
+            <section class="rail-section people-section">
+                <div class="rail-heading"><h2>Talvez você conheça</h2><a href="#explorar">Ver tudo</a></div>
+                <div class="person"><span class="avatar avatar-lilac">A</span><div><strong>ana.luz</strong><small>Leitora noturna</small></div><button type="button" aria-label="Seguir ana.luz">+</button></div>
+                <div class="person"><span class="avatar avatar-gold">M</span><div><strong>mar.deideias</strong><small>Curador de filmes</small></div><button type="button" aria-label="Seguir mar.deideias">+</button></div>
+            </section>
+        </aside>
+    </div>
+
+    <script src="./assets/js/feed.js"></script>
+</body>
+</html>

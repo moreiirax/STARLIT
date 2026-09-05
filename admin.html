@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./entrar.css">
+    <link rel="icon" type="image/png" href="./assets/img/MASCOTE DAY DREAM.png">
+    <title>Administração — STARLIT</title>
+</head>
+
+<body>
+    <div class="stars"></div>
+    <main class="login-page">
+        <a href="index.html" class="logo"><img src="./assets/img/LOGO STARLIT.jpg" alt="STARLIT"></a>
+        <section class="login-card">
+            <div class="login-header">
+                <p class="eyebrow">ÁREA RESTRITA</p>
+                <h1>Login de <span>admin.</span></h1>
+                <p class="description">Entre para administrar o universo do STARLIT.</p>
+            </div>
+            <form class="login-form" id="adminLoginForm">
+                <div class="input-group">
+                    <label for="adminEmail">E-mail administrativo</label>
+                    <input type="email" id="adminEmail" name="email" placeholder="admin@starlit.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="adminPassword">Senha</label>
+                    <div class="password-input">
+                        <input type="password" id="adminPassword" name="senha" placeholder="Digite sua senha" required>
+                        <button type="button" class="toggle-password" aria-label="Mostrar senha">&#128065;</button>
+                    </div>
+                </div>
+                <button type="submit" class="login-button">Entrar no painel <span>→</span></button>
+            </form>
+            <div class="register"><a href="entrar.html">Voltar para o login comum</a></div>
+        </section>
+        <a href="index.html" class="back">← Voltar para o início</a>
+    </main>
+    <footer><p>© 2026 STARLIT. Área administrativa.</p></footer>
+    <script src="./assets/js/admin.js"></script>
+</body>
+</html>

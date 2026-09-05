@@ -11,14 +11,6 @@ document.querySelectorAll('.toggle-password').forEach((button) => {
     });
 });
 
-function getUsers() {
-    return JSON.parse(localStorage.getItem('starlitUsers') || '[]');
-}
-
-function saveUsers(users) {
-    localStorage.setItem('starlitUsers', JSON.stringify(users));
-}
-
 function showMessage(form, message, type) {
     let messageElement = form.querySelector('.form-message');
 
@@ -33,7 +25,7 @@ function showMessage(form, message, type) {
 }
 
 if (registerForm) {
-    registerForm.addEventListener('submit', (event) => {
+    registerForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         const formData = new FormData(registerForm);
@@ -41,8 +33,6 @@ if (registerForm) {
         const email = formData.get('email').trim().toLowerCase();
         const password = formData.get('senha');
         const passwordConfirmation = formData.get('confirmar-senha');
-        const users = getUsers();
-
         if (password !== passwordConfirmation) {
             showMessage(registerForm, 'As senhas não coincidem.', 'error');
             return;
@@ -53,44 +43,39 @@ if (registerForm) {
             return;
         }
 
-        if (users.some((user) => user.email === email)) {
-            showMessage(registerForm, 'Este e-mail já está cadastrado.', 'error');
-            return;
+        try {
+            const response = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, password })
+            });
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.message);
+            window.location.href = 'feed.html';
+        } catch (error) {
+            showMessage(registerForm, error.message || 'Não foi possível criar a conta.', 'error');
         }
-
-        users.push({ name, email, password });
-        saveUsers(users);
-        localStorage.setItem('starlitCurrentUser', JSON.stringify({ name, email }));
-        showMessage(registerForm, 'Cadastro realizado! Redirecionando...', 'success');
-
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 700);
     });
 }
 
 if (loginForm) {
-    loginForm.addEventListener('submit', (event) => {
+    loginForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         const formData = new FormData(loginForm);
         const email = formData.get('email').trim().toLowerCase();
         const password = formData.get('senha');
-        const user = getUsers().find((item) => item.email === email && item.password === password);
-
-        if (!user) {
-            showMessage(loginForm, 'E-mail ou senha incorretos.', 'error');
-            return;
+        try {
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.message);
+            window.location.href = 'feed.html';
+        } catch (error) {
+            showMessage(loginForm, error.message || 'Não foi possível entrar.', 'error');
         }
-
-        localStorage.setItem('starlitCurrentUser', JSON.stringify({
-            name: user.name,
-            email: user.email
-        }));
-        showMessage(loginForm, `Bem-vindo de volta, ${user.name}!`, 'success');
-
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 700);
     });
 }
